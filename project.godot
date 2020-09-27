@@ -16,15 +16,25 @@ _global_script_class_icons={
 [application]
 
 config/name="Toplu"
-run/main_scene="res://leveltemplate.tscn"
+run/main_scene="res://pause_ui.tscn"
+run/disable_stdout=true
+run/disable_stderr=true
+boot_splash/image="res://assets/hud_x.png"
+boot_splash/bg_color=Color( 0.403922, 0.388235, 0.388235, 1 )
 config/icon="res://icon.png"
 
 [autoload]
 
 global="*res://global.gd"
 
+[debug]
+
+settings/crash_handler/message="Please include this when reporting the bug on https://github.com/bymfd/top/issues"
+
 [display]
 
+window/size/test_width=360
+window/size/test_height=640
 window/handheld/orientation="portrait"
 
 [input]
@@ -36,9 +46,16 @@ ui_click={
  ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[locale]
+
+translations=PoolStringArray( "res://assets/lan.en.translation", "res://assets/lan.tr.translation" )
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
+threads/thread_model=2
 vram_compression/import_etc=true
-vram_compression/import_etc2=false
-environment/default_environment="res://default_env.tres"
